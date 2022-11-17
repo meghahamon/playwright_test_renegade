@@ -30,9 +30,14 @@ def test_renegade_invalid_login(page: Page):
     page.locator("input[name=\"remember\"]").check()
 
     page.get_by_role("button", name="Log In arrow-function").click()
+    
     page.get_by_text("Invalid email or password. Please try again").click()
 
-
-
-
-
+def test_admin_login(page:Page):
+    page.goto("https://crmnext.renegadeinsurance.com/")
+    page.get_by_label("Email").click()
+    page.get_by_label("Email").fill("demo@gmail.com")
+    page.get_by_label("Password").click()
+    page.get_by_label("Password").fill("demopass")
+    page.get_by_role("button", name="Log In arrow-function").click()
+    page.wait_for_url("https://crmnext.renegadeinsurance.com/dashboard")
