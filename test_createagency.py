@@ -1,5 +1,6 @@
 import re
 from playwright.sync_api import Page, expect, sync_playwright
+from faker import Faker
 import test_login
 
 def test_createagency(page: Page):
@@ -15,6 +16,10 @@ def test_createagency(page: Page):
     page.wait_for_url("https://crmnext.renegadeinsurance.com/admin/agency")
     page.get_by_role("button", name="Add Agency add").click()
 
+    fake = Faker()
+    name=fake.name()
+    email=fake.email()
+
     page.get_by_label("Agency Name").click()
     page.get_by_label("Agency Name").fill("asherty")
 
@@ -25,7 +30,7 @@ def test_createagency(page: Page):
 
     page.locator("#react-select-12-option-0").click()
     page.get_by_label("First Name").click()
-    page.get_by_label("First Name").fill("Anju")
+    page.get_by_label("First Name").fill(name)
 
     page.get_by_label("Middle Name").click()
     page.get_by_label("Middle Name").fill("S")
@@ -34,13 +39,13 @@ def test_createagency(page: Page):
     page.get_by_label("Last Name").fill("E")
 
     page.get_by_label("Email").click()
-    page.get_by_label("Email").fill("anjukluv@gmail.com")
+    page.get_by_label("Email").fill(email)
 
     page.get_by_label("Phone Number").click()
     page.get_by_label("Phone Number").fill("(234) 567-88764")
 
     page.get_by_role("button", name="Save tick-sign").click()
     page.get_by_text("Success").click()
-    page.get_by_text("Agency asherty has been created and invitation link has been sent to anjukluv@gmail.com").click()
+    # page.get_by_text("Agency asherty has been created and invitation link has been sent to f'{email}'").click()
 
     
