@@ -16,26 +16,26 @@ def test_lead_adddocument(page: Page):
     # import pdb;pdb.set_trace()
    
     page.locator("b:has-text(\"Lead\")").first.click()
-    print(1)
+    
 
     page.get_by_text("Documents 1").click()
-    print(2)
+   
     page.get_by_role("button", name="Add documents").click()
-    print(3)
+ 
     page.get_by_role("button", name="Browse files").click()
-    print(4)
+   
     page.locator("input[type=\"file\"]").set_input_files("/home/megha/Documents/HT_3_Grp_hallticket.pdf")
-    print(5)
+  
     page.get_by_role("button", name="Document type").first.click()
-    print(6)
+   
     
 
     page.locator(':has-text("Signed application")').first.click()
-    print(7)
+ 
    
    
     
     
     page.get_by_role("button", name="Save tick-sign").click()
-    print(8)
+  
    
