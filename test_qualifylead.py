@@ -21,7 +21,7 @@ def test_qualifylead(page: Page):
     page.get_by_label("Phone number *").click()
     page.get_by_label("Phone number *").fill(number)
 
-    # page.get_by_role("button", name="Save tick-sign").click() 
+    page.get_by_role("button", name="Save tick-sign").click() 
     
 
 def test_qualifylead_detailspage(page: Page):
