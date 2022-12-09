@@ -4,13 +4,13 @@ import test_login
 
 
 
-def test_commercial_account(page: Page):
+def test_commercial_contact(page: Page):
     test_login.test_renegade_login(page)
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
-    page.get_by_text("Accounts").first.click()
-    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/accounts")
-    page.get_by_role("button", name="Add account").click()
+    page.get_by_text("Contacts").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/contacts")
+    page.get_by_role("button", name="Add contact").click()
     page.get_by_role("button", name="Commercial").click()
     
     page.get_by_label("First name").click()
@@ -38,13 +38,13 @@ def test_commercial_account(page: Page):
     page.get_by_label("Total payroll*").fill("234")
     page.get_by_role("button", name="Save tick-sign").click()
 
-def test_invalidcommercial_account(page: Page):
+def test_invalidcommercial_contact(page: Page):
     test_login.test_renegade_login(page)
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
-    page.get_by_text("Accounts").first.click()
-    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/accounts")
-    page.get_by_role("button", name="Add account").click()
+    page.get_by_text("Contacts").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/contacts")
+    page.get_by_role("button", name="Add contact").click()
     page.get_by_role("button", name="Commercial").click()
 
     page.get_by_label("First name").click()
@@ -66,13 +66,13 @@ def test_invalidcommercial_account(page: Page):
     page.locator("input[name=\"email\"]").click()
     page.get_by_text("Please enter your email").click()
 
-def test_invalidbusiness_account(page: Page):
+def test_invalidbusiness_Contact(page: Page):
     test_login.test_renegade_login(page)
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
-    page.get_by_text("Accounts").first.click()
-    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/accounts")
-    page.get_by_role("button", name="Add account").click()
+    page.get_by_text("Contacts").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/contacts")
+    page.get_by_role("button", name="Add contacts").click()
     page.get_by_role("button", name="Commercial").click()
     page.get_by_label("First name").click()
     page.get_by_label("First name").fill("Sachin")
