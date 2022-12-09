@@ -18,7 +18,7 @@ def test_activity_contact(page: Page):
     page.locator("b:has-text(\"sanju samson\")").first.click()
 
     
-    page.get_by_text("Activities 0").click()
+    page.get_by_text("Activities 1").click()
     page.get_by_text("Add Note").first.click()
    
     
