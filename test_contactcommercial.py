@@ -72,7 +72,7 @@ def test_invalidbusiness_Contact(page: Page):
     page.get_by_role("heading", name="My Book").click()
     page.get_by_text("Contacts").click()
     page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/contacts")
-    page.get_by_role("button", name="Add contacts").click()
+    page.get_by_role("button", name="Add contact").click()
     page.get_by_role("button", name="Commercial").click()
     page.get_by_label("First name").click()
     page.get_by_label("First name").fill("Sachin")
@@ -97,7 +97,7 @@ def test_invalidbusiness_Contact(page: Page):
     page.get_by_label("Business phone number*").click()
     page.get_by_text("Please enter Business Phone Number").click()
     page.get_by_label("Total payroll*").click()
-    page.get_by_text("Please enter Payroll").click()
+    page.get_by_text("Please enter a valid amount").click()
 
 
    
