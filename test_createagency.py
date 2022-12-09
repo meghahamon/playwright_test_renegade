@@ -10,10 +10,10 @@ def test_createagency(page: Page):
     # import pdb; pdb.set_trace()
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("link", name="logo Management").click()
-    page.wait_for_url("https://crmnext.renegadeinsurance.com/admin")
+    page.wait_for_url("https://crm.dev.joinhobnob.com/admin")
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="Manage Agencies").click()
-    page.wait_for_url("https://crmnext.renegadeinsurance.com/admin/agency")
+    page.wait_for_url("https://crm.dev.joinhobnob.com/admin/agency")
     page.get_by_role("button", name="Add Agency add").click()
 
     fake = Faker()

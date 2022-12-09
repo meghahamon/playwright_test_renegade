@@ -1,0 +1,72 @@
+import re
+from playwright.sync_api import Page, expect, sync_playwright
+import test_login
+
+
+
+def test_create_account(page: Page):
+    test_login.test_renegade_login(page)
+    page.get_by_role("img", name="logo").first.click()
+    page.get_by_role("heading", name="My Book").click()
+   
+   
+    page.get_by_text("Accounts").first.click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/accounts")
+    page.get_by_role("button", name="Add account").click()
+    page.get_by_label("First name").click()
+    page.get_by_label("First name").fill("Sanjo")
+    page.get_by_label("Last name*").click()
+    page.get_by_label("Last name*").fill("K")
+    page.locator("input[name=\"email\"]").click()
+    page.locator("input[name=\"email\"]").fill("Sanjo@hamon.in")
+    page.get_by_label("Phone number*").click()
+    page.get_by_label("Phone number*").fill("(344) 567-7777")
+    page.locator(".date-input").click()
+    page.get_by_role("option", name="Choose Monday, January 1st, 1990").click()
+    page.locator(".css-ackcql").click()
+    page.locator("#react-select-11-option-0").click()
+    page.locator("input[name=\"jurisdictionUUID\"]").click()
+    page.locator("input[name=\"jurisdictionUUID\"]").fill("a")
+    page.get_by_role("heading", name="Alabama").click()
+    page.get_by_label("License number").click()
+    page.get_by_label("License number").fill("34")
+    page.get_by_label("Mailing Address").click()
+    page.get_by_label("Mailing Address").fill("s")
+    page.get_by_text("San Francisco, CA, USA").click()
+    page.get_by_label("Apt").click()
+    page.get_by_label("Apt").fill("124")
+    page.get_by_role("button", name="Save tick-sign").click()
+
+def test_create_invalidaccount(page: Page):
+    test_login.test_renegade_login(page)
+    page.get_by_role("img", name="logo").first.click()
+    page.get_by_role("heading", name="My Book").click()
+    page.get_by_text("Accounts").first.click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/accounts")
+    page.get_by_role("button", name="Add account").click()
+    page.get_by_label("First name").click()
+    page.get_by_label("First name").fill("Sunil")
+    page.locator(".date-input").click()
+    page.get_by_role("option", name="Choose Monday, January 1st, 1990").click()
+    page.locator(".css-15aalx3").click()
+    page.locator(".css-ackcql").dblclick()
+    page.locator("#react-select-11-option-0").click()
+    page.locator("input[name=\"jurisdictionUUID\"]").click()
+    page.locator("input[name=\"jurisdictionUUID\"]").fill("A")
+    page.get_by_role("heading", name="Alabama").click()
+    page.get_by_label("License number").click()
+    page.get_by_label("License number").fill("345")
+    page.get_by_label("Mailing Address").click()
+    page.get_by_label("Mailing Address").fill("s")
+    page.get_by_text("San Francisco, CA, USA").click()
+    page.get_by_label("Apt").click()
+    page.get_by_label("Apt").fill("890")
+    page.get_by_role("button", name="Save tick-sign").click()
+    page.get_by_label("Last name*").click()
+    page.get_by_text("Last name is required").click()
+    page.get_by_label("Phone number*").click()
+    page.get_by_text("Phone Number is required").click()
+    page.locator("input[name=\"email\"]").click()
+    page.get_by_text("Please enter your email").click()
+
+   

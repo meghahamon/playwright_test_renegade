@@ -4,13 +4,13 @@ import test_login
 
 
 
-def test_edit_lead(page: Page):
+def test_edit_contact(page: Page):
     test_login.test_renegade_login(page)
 
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
-    page.get_by_text("Leads").click()
-    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/leads")
+    page.get_by_text("Contacts").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/contacts")
 
    
     action_button = page.locator(".d-flex > .vector").first
@@ -25,6 +25,3 @@ def test_edit_lead(page: Page):
     
     # page.get_by_role("button", name="Save tick-sign").click()
    
-
-
- 

@@ -8,20 +8,19 @@ import test_login
 def test_create_principalagent(page: Page):
     test_login.test_admin_login(page)
     
-    page.goto("https://crmnext.renegadeinsurance.com/")
+    page.goto("https://crm.dev.joinhobnob.com/")
 
     # import pdb; pdb.set_trace()
    
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("link", name="logo Management").click()
-    page.wait_for_url("https://crmnext.renegadeinsurance.com/admin")
+    page.wait_for_url("https://crm.dev.joinhobnob.com/admin")
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="Manage Agencies").click()
     
-    page.wait_for_url("https://crmnext.renegadeinsurance.com/admin/agency")
+    page.wait_for_url("https://crm.dev.joinhobnob.com/admin/agency")
     
     page.locator(".td > .d-flex > .actionButton").first.click()
-    # page.wait_for_url("https://crmnext.renegadeinsurance.com/admin/agency/eaaccf71-3bf6-4140-9fec-e7ba9678f1ee/user")
     page.get_by_role("button", name="Add User add").click()
     fake = Faker()
     name=fake.name()
@@ -43,12 +42,9 @@ def test_create_principalagent(page: Page):
     page.get_by_role("button", name="Save tick-sign").click()
     page.get_by_text("Success").click()
     page.get_by_text(f'{name} P has been added as a user for Renegade Team.').click()
-    # import pdb; pdb.set_trace()
-    # page.get_by_text(f'{name} P').click()
+    
     page.get_by_role("cell", name=f'{name} P').click()
-    # row_config = f'tr:has-text("{name} P")'
-    # row = page.locator(row_config)
-    # row.innertext()
+    
     
 
 

@@ -7,4 +7,4 @@ import test_login
 def test_dashboard(page: Page):
     test_login.test_renegade_login(page)
     
-    page.wait_for_url("https://crmnext.renegadeinsurance.com/dashboard")
+    page.wait_for_url("https://crm.dev.joinhobnob.com/dashboard")
