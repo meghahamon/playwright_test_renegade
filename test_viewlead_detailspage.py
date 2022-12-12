@@ -12,17 +12,21 @@ def test_viewlead_detailspage(page: Page):
     page.get_by_text("Leads").click()
     page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/leads")
 
-    # import pdb;pdb.set_trace()
+    import pdb;pdb.set_trace()
    
     page.locator("b:has-text(\"Lead\")").first.click()
 
     
     page.get_by_text("Activities 1").click()
+    print(1)
     page.get_by_text("Add Note").first.click()
+    print(2)
    
     
     page.get_by_role("heading", name="All Activities").click()
+    print(3)
     
     page.get_by_role("heading", name="megha qw").first.click()
+    print(4)
     
     

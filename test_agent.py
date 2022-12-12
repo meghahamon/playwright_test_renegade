@@ -6,19 +6,18 @@ import test_login
 def test_create_agent(page: Page):
     test_login.test_admin_login(page)
     
-    page.goto("https://crmnext.renegadeinsurance.com/")
+    page.goto("https://crm.dev.joinhobnob.com/")
 
     
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("link", name="logo Management").click()
-    page.wait_for_url("https://crmnext.renegadeinsurance.com/admin")
+    page.wait_for_url("https://crm.dev.joinhobnob.com/admin")
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="Manage Agencies").click()
     
-    page.wait_for_url("https://crmnext.renegadeinsurance.com/admin/agency")
+    page.wait_for_url("https://crm.dev.joinhobnob.com/admin/agency")
 
     page.locator(".td > .d-flex > .actionButton").first.click()
-    # page.wait_for_url("https://crmnext.renegadeinsurance.com/admin/agency/52848194-93ab-4d52-9a78-4a12b807631b/user")
     page.get_by_role("button", name="Add User add").click()
     fake = Faker()
     name=fake.name()
@@ -51,5 +50,3 @@ def test_create_agent(page: Page):
     
 
    
-
-
