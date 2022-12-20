@@ -37,6 +37,9 @@ def test_commercial_account(page: Page):
     page.get_by_label("Total payroll*").click()
     page.get_by_label("Total payroll*").fill("234")
     page.get_by_role("button", name="Save tick-sign").click()
+    page.get_by_text("ML").first.click()
+    page.get_by_role("button", name="Log out").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/")
 
 def test_invalidcommercial_account(page: Page):
     test_login.test_renegade_login(page)
@@ -65,6 +68,9 @@ def test_invalidcommercial_account(page: Page):
     page.get_by_text("Phone Number is required").click()
     page.locator("input[name=\"email\"]").click()
     page.get_by_text("Please enter your email").click()
+    page.get_by_text("ML").first.click()
+    page.get_by_role("button", name="Log out").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/")
 
 def test_invalidbusiness_account(page: Page):
     test_login.test_renegade_login(page)
@@ -98,6 +104,9 @@ def test_invalidbusiness_account(page: Page):
     page.get_by_text("Please enter Business Phone Number").click()
     page.get_by_label("Total payroll*").click()
     page.get_by_text("Please enter Payroll").click()
+    page.get_by_text("ML").first.click()
+    page.get_by_role("button", name="Log out").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/")
 
 
    
