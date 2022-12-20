@@ -36,6 +36,9 @@ def test_create_account(page: Page):
     page.get_by_label("Apt").click()
     page.get_by_label("Apt").fill("124")
     page.get_by_role("button", name="Save tick-sign").click()
+    page.get_by_text("ML").first.click()
+    page.get_by_role("button", name="Log out").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/")
 
 def test_create_invalidaccount(page: Page):
     test_login.test_renegade_login(page)
@@ -68,5 +71,8 @@ def test_create_invalidaccount(page: Page):
     page.get_by_text("Phone Number is required").click()
     page.locator("input[name=\"email\"]").click()
     page.get_by_text("Please enter your email").click()
+    page.get_by_text("ML").first.click()
+    page.get_by_role("button", name="Log out").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/")
 
    
