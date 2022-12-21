@@ -6,14 +6,14 @@ import test_login
 
 
 def test_contact_adddocument(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
 
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
     page.get_by_text("Contacts").click()
     page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/contacts")
 
-    import pdb;pdb.set_trace()
+    # import pdb;pdb.set_trace()
    
     
     page.locator("b:has-text(\"Jennifer Bryant Lead\")").click()
@@ -36,7 +36,7 @@ def test_contact_adddocument(page: Page):
     print(9)
     page.get_by_role("button", name="Save tick-sign").click()
     print(10)
-    
+   
 
   
    
