@@ -5,7 +5,7 @@ import test_login
 
 
 def test_commercial_account(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
     page.get_by_text("Accounts").first.click()
@@ -42,7 +42,7 @@ def test_commercial_account(page: Page):
     page.wait_for_url("https://crm.dev.joinhobnob.com/")
 
 def test_invalidcommercial_account(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
     page.get_by_text("Accounts").first.click()
@@ -73,7 +73,7 @@ def test_invalidcommercial_account(page: Page):
     page.wait_for_url("https://crm.dev.joinhobnob.com/")
 
 def test_invalidbusiness_account(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
     page.get_by_text("Accounts").first.click()
