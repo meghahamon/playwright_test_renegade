@@ -4,7 +4,7 @@ from faker import Faker
 import test_login
 
 def test_create_agent(page: Page):
-    test_login.test_admin_login(page)
+    # test_login.test_admin_login(page)
     
     page.goto("https://crm.dev.joinhobnob.com/")
 
@@ -43,6 +43,7 @@ def test_create_agent(page: Page):
     page.get_by_text(f'{name} ha has been added as a user for Renegade Team.').click()
 
     page.get_by_role("cell", name=f'{name} ha').click()
+    
    
    
    
