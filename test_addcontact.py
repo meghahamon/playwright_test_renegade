@@ -5,7 +5,7 @@ import test_login
 
 
 def test_create_contact(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
 
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
@@ -38,9 +38,12 @@ def test_create_contact(page: Page):
     page.get_by_label("Apt").click()
     page.get_by_label("Apt").fill("345")
     page.get_by_role("button", name="Save tick-sign").click()
+    page.get_by_text("ML").first.click()
+    page.get_by_role("button", name="Log out").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/")
 
 def test_invalidcreate_contact(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
 
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
@@ -71,4 +74,4 @@ def test_invalidcreate_contact(page: Page):
     page.locator("input[name=\"email\"]").click()
     page.get_by_text("Invalid email. Please try again").click()
     page.get_by_role("button", name="Save tick-sign").click()
-
+   
