@@ -5,7 +5,7 @@ import test_login
 
 
 def test_contact_adddocument(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
 
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
@@ -20,3 +20,4 @@ def test_contact_adddocument(page: Page):
     page.locator("input[name=\"producer\"]").first.fill("m")
     page.get_by_text("megha+demopa@hamon.in(345) 678-7654").click()
     page.get_by_text("2 filters added").first.click()
+    
