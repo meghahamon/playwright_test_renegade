@@ -3,7 +3,7 @@ from playwright.sync_api import Page, expect, sync_playwright
 import test_login
 
 def test_change_password(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
 
     page.goto("https://crm.dev.joinhobnob.com/")
 
@@ -22,3 +22,6 @@ def test_change_password(page: Page):
     page.locator("input[name=\"confirmPassword\"]").fill("Megha12@hamon.in")
 
     page.get_by_role("button", name="Change password arrow-function").click()
+    page.get_by_text("ML").first.click()
+    page.get_by_role("button", name="Log out").click()
+    page.wait_for_url("https://crm.dev.joinhobnob.com/")
