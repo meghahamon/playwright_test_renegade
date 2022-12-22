@@ -7,17 +7,24 @@ import test_login,test_dashboard,test_createlead
 
 def test_initial(page: Page):
     test_login.test_renegade_login(page)
+    test_login.test_renegade_invalid_login(page)
+   
     test_dashboard.test_dashboard(page)
     test_createlead.test_create_lead(page)
+    test_create_lead.test_create_invalidlead(page)
     test_leadcommercial.test_test_lead_commercial(page)
+    test_lead_commercial.test_invalid_lead_commercial(page)
     test_editlead.test_edit_lead(page)
     test_leadactivity.test_activity_lead(page)
     test_junklead.test_junk_lead(page)
     test_qualifylead.test_qualifylead(page)
+    test_qualifylead.test_qualifylead_detailspage(page)
     test_viewlead_detailspage.test_viewlead_detailspage(page)
     test_lead_adddocument.test_lead_adddocument(page)
     test_lead_filter.test_lead_filter(page)
     test_addcontact.test_addcontact(page)
+    test_addcontact.test_invalidcreate_contact(page)
+    test_addcontact.test
     test_contactcommercial.test_contactcommercial(page)
     test_editcontact.test_editcontact(page)
     test_editcontact_activity.test_editcontact_activity(page)
