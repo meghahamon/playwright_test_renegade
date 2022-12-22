@@ -9,20 +9,20 @@ import test_login
 
 def test_create_lead(page: Page):
     test_login.test_renegade_login(page)
-
+    # import pdb;pdb.settrace()
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
     page.get_by_text("Leads").click()
     page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/leads")
     page.get_by_role("button", name="Add lead").click()
-
-    page.get_by_text("Lead Source:").click()
-    page.get_by_text("Facebook").click()
+    # import pdb;pdb.set_trace()   
+    # page.get_by_text("Lead Source:").click()
+    # page.get_by_text("Facebook").click()
     fake = Faker()
     name =fake.name()
     email= fake.email()
     number = fake.phone_number() 
-    
+   
     page.get_by_label("First name").click()
     page.get_by_label("First name").fill(name)
     page.get_by_label("Middle name").click()
@@ -33,8 +33,8 @@ def test_create_lead(page: Page):
     page.locator("input[name=\"email\"]").fill(email)
     page.get_by_label("Phone number").click()
     page.get_by_label("Phone number").fill(number)
-    page.locator(".css-8mmkcg").click()
-    page.locator("#react-select-11-option-0").click()
+    page.get_by_text("Lead status *").click()
+    page.locator("#react-select-17-option-0").click()
     page.get_by_label("Mailing Address").click()
     page.get_by_label("Mailing Address").fill("san")
     page.get_by_text("San Francisco, CA, USA").click()
@@ -55,8 +55,8 @@ def test_create_invalidlead(page: Page):
     page.get_by_text("Leads").click()
     page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/leads")
     page.get_by_role("button", name="Add lead").click()
-    page.get_by_text("Lead Source:").click()
-    page.get_by_text("Facebook").click()
+    # page.get_by_text("Lead Source:").click()
+    # page.get_by_text("Facebook").click()
     page.get_by_label("First name").click()
     page.get_by_label("First name").fill("saritha")
     page.get_by_label("Middle name").click()
