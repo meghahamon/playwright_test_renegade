@@ -4,7 +4,7 @@ from faker import Faker
 import test_login
 
 def test_createagency(page: Page):
-    test_login.test_admin_login(page)
+    # test_login.test_admin_login(page)
 
 
     # import pdb; pdb.set_trace()
