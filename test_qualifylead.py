@@ -7,7 +7,7 @@ import test_login
 
 
 def test_qualifylead(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
 
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
@@ -25,7 +25,7 @@ def test_qualifylead(page: Page):
     
 
 def test_qualifylead_detailspage(page: Page):
-    test_login.test_renegade_login(page) 
+    # test_login.test_renegade_login(page) 
 
     page.get_by_role("img", name="logo").first.click()   
     page.get_by_role("heading", name="My Book").click()
