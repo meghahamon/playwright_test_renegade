@@ -6,7 +6,7 @@ import test_login
 
 
 def test_lead_adddocument(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
 
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
