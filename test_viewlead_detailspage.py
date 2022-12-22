@@ -5,14 +5,14 @@ import test_login
 
 
 def test_viewlead_detailspage(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
 
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
     page.get_by_text("Leads").click()
     page.wait_for_url("https://crm.dev.joinhobnob.com/mybook/leads")
 
-    import pdb;pdb.set_trace()
+    # import pdb;pdb.set_trace()
    
     page.locator("b:has-text(\"Lead\")").first.click()
 
