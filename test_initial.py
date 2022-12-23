@@ -46,7 +46,11 @@ def test_initial(page: Page):
 
     test_addpolicy.test_addpolicy(page)
 
+    test_addopprtunity.test_addopprtunity(page)
+    test_opportunitycommercial.test_commercial_opportunity(page)
+    
     test_addpipeline.test_create_pipeline(page)
+    test_editpipeline.test_edit_pipeline
 
     test_login.test_renegade_logout(page)
 

@@ -5,7 +5,7 @@ import test_login
 
 
 def test_commercial_opportunity(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
     page.get_by_text("Opportunities").first.click()
