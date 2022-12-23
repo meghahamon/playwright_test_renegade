@@ -15,7 +15,7 @@ def test_create_pipeline(page: Page):
     page.get_by_text("Create a Pipeline").click()
     page.get_by_label("Pipeline Name").click()
     page.get_by_label("Pipeline Name").fill("demo")
-    page.get_by_text("Opportunity Types").click()
+    page.locator("#react-select-20-option-0").click()
 
     # page.get_by_text("Annuity").check()
     # page.locator("text=Annuity").check()
