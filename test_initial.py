@@ -42,13 +42,14 @@ def test_initial(page: Page):
     test_accountcommercial.test_invalidcommercial_account(page)
     test_accountcommercial.test_invalidbusiness_account(page)
     test_deleteaccount.test_deleteaccount(page)
+    test_accountactivity.test_activity_account(page)
     test_account_filter.test_account_filter(page)
 
     test_addpolicy.test_addpolicy(page)
 
     test_addopprtunity.test_addopprtunity(page)
     test_opportunitycommercial.test_commercial_opportunity(page)
-    
+
     test_addpipeline.test_create_pipeline(page)
     test_editpipeline.test_edit_pipeline
 
