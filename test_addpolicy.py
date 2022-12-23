@@ -3,7 +3,7 @@ from playwright.sync_api import Page, expect, sync_playwright
 import test_login
 
 def test_create_policy(page: Page):
-    test_login.test_renegade_login(page)
+    # test_login.test_renegade_login(page)
     page.get_by_role("img", name="logo").first.click()
     page.get_by_role("heading", name="My Book").click()
    
