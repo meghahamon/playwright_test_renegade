@@ -22,9 +22,9 @@ def test_initial(page: Page):
     test_viewlead_detailspage.test_viewlead_detailspage(page)
     test_lead_adddocument.test_lead_adddocument(page)
     test_lead_filter.test_lead_filter(page)
+
     test_addcontact.test_addcontact(page)
     test_addcontact.test_invalidcreate_contact(page)
-    
     test_contactcommercial.test_contactcommercial(page)
     test_contactcommercial.test_invalidcommercial_contact
     test_contactcommercial.test_invalidbusiness_Contact(page)
@@ -35,9 +35,9 @@ def test_initial(page: Page):
     test_contact_viewdetailspage.test_contact_viewdetailspage(page)
     test_contact_adddocument.test_contact_adddocument(page)
     test_contact_filter.test_contact_filter(page)
+
     test_addaccount.test_create_account(page)
     test_addaccount.test_create_invalidaccount(page)
-    
     test_accountcommercial.test_accountcommercial(page)
     test_accountcommercial.test_invalidcommercial_account(page)
     test_accountcommercial.test_invalidbusiness_account(page)
@@ -55,5 +55,5 @@ def test_initial(page: Page):
     test_createagency.test_createagency(page)
     test_createagent.test_createagent(page)
     test_createprincipalagent.test_createprincipalagent(page)
-    
+
     test_login.test_admin_logout(page)    
