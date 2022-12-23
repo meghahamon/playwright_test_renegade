@@ -37,6 +37,8 @@ def test_initial(page: Page):
     test_accountcommercial.test_accountcommercial(page)
     test_deleteaccount.test_deleteaccount(page)
     test_account_filter.test_account_filter(page)
+    test_addpolicy.test_addpolicy(page)
+    test_addpipeline.test_addpipeline(page)
     test_login.test_renegade_logout(page)
 
     test_login.test_admin_login(page)
